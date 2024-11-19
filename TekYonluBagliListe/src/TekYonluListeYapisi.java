@@ -20,6 +20,21 @@ public class TekYonluListeYapisi {
         }
     }
 
+    void bastanSil(){
+        if (head == null){
+            System.out.println("Listede silinecek bir sey yok!");
+        }
+        else if (head.next == null) {
+            head = null;
+            tail = null;
+            System.out.println("Listede kalan son eleman da silindi!");
+        }
+        else {
+            head = head.next;
+            System.out.println("Bastaki eleman silindi!");
+        }
+    }
+
     void arayaEkle (int indis , int x ){
         Node eleman = new Node();
         eleman.data = x;
@@ -71,6 +86,48 @@ public class TekYonluListeYapisi {
 
     }
 
+    void aradanSil(int indis){
+        if (head == null){
+            System.out.println("Listede silinecek bir sey yok!");
+        }
+        else if (head.next == null && indis == 0){
+            head = null;
+            tail = null;
+            System.out.println("Bastaki eleman da silindi!");
+        }
+        else {
+            int i = 0;
+            Node temp = head;
+            Node temp2 = head;
+
+            while (temp != null){
+                i++;
+                temp2 = temp;
+                temp = temp.next;
+            }
+            if (i == indis){
+                temp2.next = null;
+                tail = temp2;
+                System.out.println("Listenin son sirasindaki eleman silindi!");
+            }
+            else {
+                int j = 0;
+                temp = head;
+                temp2 = head;
+                while (j != indis){
+
+
+                    temp2 = temp;
+                    temp = temp.next;
+                    j++;
+                }
+                temp2.next = temp.next;
+                System.out.println("Aradaki nesne silindi");
+            }
+        }
+
+    }
+
 
     void sonaEkle (int x){
         Node eleman = new Node();
@@ -89,15 +146,38 @@ public class TekYonluListeYapisi {
         }
     }
 
+    void sondanSil(){
+        if (head == null){
+            System.out.println("Listede silinecek bir sey yok!");
+        }
+        else if (head.next == null) {
+            head = null;
+            tail = null;
+            System.out.println("Listede kalan son eleman da silindi!");
+        }
+        else {
+            Node temp = head;
+            Node temp2 = head;
+            while (temp.next != null){
+                temp2 = temp;
+                temp = temp.next;
+
+            }
+            temp2.next=null;
+            tail = temp2;
+            System.out.println("Sondan eleman silindi!");
+        }
+    }
+
     void yazdir(){
         if (head == null){
             System.out.println("Liste yapisi bos!");
         }
         else {
             Node temp = head;
-            System.out.println("Baş--->");
+            System.out.print("Baş--->");
             while (temp.next != null){
-                System.out.println(temp.data + " -> ");
+                System.out.print(temp.data + " -> ");
                 temp = temp.next;
             }
             System.out.println("Son!");

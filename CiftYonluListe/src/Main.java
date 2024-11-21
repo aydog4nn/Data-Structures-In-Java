@@ -11,7 +11,10 @@ public class Main {
             System.out.println("1=Basa Ekle");
             System.out.println("2=Sona Ekle");
             System.out.println("3=Araya Ekle");
-            System.out.println("4=Sondan Yazdir.");
+            System.out.println("4=Bastan Sil");
+            System.out.println("5=Sondan Sil");
+            System.out.println("6=Aradan Sil");
+            System.out.println("7= Yazdir.");
             System.out.println("0-Cikis");
             System.out.println("Seciminiz:");
 
@@ -32,6 +35,15 @@ public class Main {
                 System.out.println("Sayi:");
                 sayi = scanner.nextInt();
                 liste.arayaEkle(indis,sayi);
+            }
+            else if (secim == 4)
+                liste.bastanSil();
+            else if (secim == 5)
+                liste.sondanSil();
+            else if (secim ==6){
+                System.out.print("Indis:");
+                indis = scanner.nextInt();
+                liste.aradanSil(indis);
             }
             liste.yazdir();
         }

@@ -40,4 +40,28 @@ public class BST {
             System.out.print(root.data + " ");
         }
     }
+    int height(Node root) {
+        if (root == null){
+            return 0;
+        }
+        else {
+            int sol = 0,sag = 0;
+            sol = height(root.left);
+            sag = height(root.right);
+
+            if (sol > sag)
+                return sol+1;
+            else
+                return sag+1;
+        }
+    }
+    int size(Node root){
+        if (root == null){
+            return 0;
+        }
+        else {
+            return size(root.left) + 1 + size(root.right);
+
+        }
+    }
 }

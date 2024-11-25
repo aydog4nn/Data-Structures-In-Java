@@ -2,16 +2,14 @@ public class Main {
     public static void main(String[] args) {
         BST bst = new BST();
         bst.root = bst.insert(bst.root, 10);
-        bst.root = bst.insert(bst.root, 15);
         bst.root = bst.insert(bst.root, 8);
+        bst.root = bst.insert(bst.root, 15);
         bst.root = bst.insert(bst.root, 5);
         bst.root = bst.insert(bst.root, 12);
         bst.root = bst.insert(bst.root, 20);
-        bst.root = bst.insert(bst.root, 4);
-        bst.root = bst.insert(bst.root, 3);
-        bst.root = bst.insert(bst.root, 2);
-        bst.root = bst.insert(bst.root, 1);
-        bst.root = bst.insert(bst.root, 16);
+        bst.root = bst.insert(bst.root, 9);
+        bst.root = bst.insert(bst.root, 25);
+
 
         System.out.print("PreOrder:");
         bst.preOrder(bst.root);
@@ -21,5 +19,8 @@ public class Main {
         System.out.println();
         System.out.print("PostOrder:");
         bst.postOrder(bst.root);
+
+        System.out.println("\n\nAgacin yuksekligi:" + bst.height(bst.root));
+        System.out.println("\nAgac uzerindeki eleman sayisi:" + bst.size(bst.root));
     }
 }
